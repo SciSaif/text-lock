@@ -8,9 +8,21 @@ const oops = document.querySelector('.oops');
 
 var store = "";
 
-var today = new Date();
-var time = today.getHours();
-if(time>=12 && time <= 20){
+//Time Api
+var mytime = "";
+const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
+fetch(apiUrl)
+.then(res => res.json())
+.then((out) => {
+    const temp = out.datetime;
+    time = new Date(temp).getHours();
+    console.log(time);
+    mytime = time;
+}).catch(err => console.error(err));
+
+setTimeout(function(){
+
+if(time>=11 && time <= 20){
     container1.classList.remove('invisible');
     container2.classList.remove('invisible');
     oops.classList.add('invisible');
@@ -41,3 +53,4 @@ function displayText() {
 }
 
 display.addEventListener('click', displayText)
+},1000);
