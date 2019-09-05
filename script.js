@@ -19,8 +19,7 @@ fetch(apiUrl)
 }).catch(err => console.error(err));
 
 setTimeout(function(){
-mytime = 12;
-if(mytime>=11 && mytime <= 20){
+if(mytime>=11 && mytime <= 21){
     container1.classList.remove('invisible');
     container2.classList.remove('invisible');
     oops.classList.add('invisible');
