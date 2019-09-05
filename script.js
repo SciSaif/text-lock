@@ -53,4 +53,4 @@ function displayText() {
 }
 
 display.addEventListener('click', displayText)
-},1000);
+},10000);
