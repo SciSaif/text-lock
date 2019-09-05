@@ -14,14 +14,12 @@ const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
 fetch(apiUrl)
 .then(res => res.json())
 .then((out) => {
-    const temp = out.datetime;
-    time = new Date(temp).getHours();
-    console.log(time);
-    mytime = time;
+    mytime = new Date(out.datetime).getHours();
+    console.log(mytime);
 }).catch(err => console.error(err));
 
 setTimeout(function(){
-
+mytime = 12;
 if(mytime>=11 && mytime <= 20){
     container1.classList.remove('invisible');
     container2.classList.remove('invisible');
@@ -53,4 +51,4 @@ function displayText() {
 }
 
 display.addEventListener('click', displayText)
-},10000);
+},5000);
