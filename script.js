@@ -15,9 +15,9 @@ const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
 fetch(apiUrl)
 .then(res => res.json())
 .then((out) => {
+    span.innerHTML = " dsds"
     mytime = new Date(out.datetime).getHours();
     console.log(mytime);
-    span.innerHTML = " dsds"
 
     
     if(mytime>=0 && mytime <= 22){
