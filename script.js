@@ -9,7 +9,7 @@ const oops = document.querySelector('.oops');
 var store = "";
 
 //Time Api
-var mytime = "";
+var mytime = 0;
 const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
 fetch(apiUrl)
 .then(res => res.json())
@@ -22,7 +22,7 @@ fetch(apiUrl)
 
 setTimeout(function(){
 
-if(time>=11 && time <= 20){
+if(mytime>=11 && mytime <= 20){
     container1.classList.remove('invisible');
     container2.classList.remove('invisible');
     oops.classList.add('invisible');
