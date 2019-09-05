@@ -17,39 +17,41 @@ fetch(apiUrl)
 .then((out) => {
     mytime = new Date(out.datetime).getHours();
     console.log(mytime);
+
+    
+    if(mytime>=11 && mytime <= 21){
+        container1.classList.remove('invisible');
+        container2.classList.remove('invisible');
+        oops.classList.add('invisible');
+    }else {
+        container1.classList.add('invisible');
+        container2.classList.add('invisible');
+        oops.classList.remove('invisible');
+    }
+    
+    function loadItem() {
+        var storeitem =  localStorage.getItem("storeItem");
+        return storeitem;
+    }
+    
+    function storeText() {
+        var text = textInput.value;
+        textInput.value =  "";
+    
+        store = text;
+        localStorage.setItem("storeItem", store);
+    
+    }
+    
+    enter.addEventListener('click', storeText)
+    
+    function displayText() {
+        textDisplay.value = loadItem();
+    }
+    
+    display.addEventListener('click', displayText)
+
+
 }).catch(err => console.error(err));
 
-setTimeout(function(){
-    span.innerHTML = "popopo"
-if(mytime>=11 && mytime <= 31){
-    container1.classList.remove('invisible');
-    container2.classList.remove('invisible');
-    oops.classList.add('invisible');
-}else {
-    container1.classList.add('invisible');
-    container2.classList.add('invisible');
-    oops.classList.remove('invisible');
-}
 
-function loadItem() {
-    var storeitem =  localStorage.getItem("storeItem");
-    return storeitem;
-}
-
-function storeText() {
-    var text = textInput.value;
-    textInput.value =  "";
-
-    store = text;
-    localStorage.setItem("storeItem", store);
-
-}
-
-enter.addEventListener('click', storeText)
-
-function displayText() {
-    textDisplay.value = loadItem();
-}
-
-display.addEventListener('click', displayText)
-},5000);
