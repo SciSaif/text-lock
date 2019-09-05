@@ -17,6 +17,7 @@ fetch(apiUrl)
 .then((out) => {
     mytime = new Date(out.datetime).getHours();
     console.log(mytime);
+    alert(mytime);
 
     
     if(mytime>=0 && mytime <= 22){
