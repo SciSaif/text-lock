@@ -5,6 +5,7 @@ const textDisplay = document.querySelector('.text-display');
 const container1 = document.querySelector('.container1');
 const container2 = document.querySelector('.container2');
 const oops = document.querySelector('.oops');
+const span = document.querySelector('span');
 
 var store = "";
 
@@ -19,6 +20,7 @@ fetch(apiUrl)
 }).catch(err => console.error(err));
 
 setTimeout(function(){
+    span.innerHTML = "popopo"
 if(mytime>=11 && mytime <= 31){
     container1.classList.remove('invisible');
     container2.classList.remove('invisible');
