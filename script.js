@@ -12,10 +12,10 @@ var store = "";
 //Time Api
 var mytime = 0;
 const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
+span.innerHTML = " dsds"
 fetch(apiUrl)
 .then(res => res.json())
 .then((out) => {
-    span.innerHTML = " dsds"
     mytime = new Date(out.datetime).getHours();
     console.log(mytime);
 
