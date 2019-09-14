@@ -11,16 +11,13 @@ var store = "";
 
 //Time Api
 var mytime = 0;
-const apiUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
-span.innerHTML = " dsds"
+const apiUrl = "https://worldtimeapi.org/api/timezone/Asia/Kolkata";
 fetch(apiUrl)
 .then(res => res.json())
 .then((out) => {
     mytime = new Date(out.datetime).getHours();
     console.log(mytime);
-
-    
-    if(mytime>=0 && mytime <= 22){
+    if(mytime>=9 && mytime <= 22){
         container1.classList.remove('invisible');
         container2.classList.remove('invisible');
         oops.classList.add('invisible');
